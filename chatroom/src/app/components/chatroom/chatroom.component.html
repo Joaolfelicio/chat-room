@@ -1,0 +1,15 @@
+<div id=messages>
+  <div class='message-box' *ngFor="let message of messagesArr">
+    <h4>{{message.user}} <span>{{message.date | date: "medium" }}</span></h4>
+    <p>{{message.message}}</p>
+  </div>
+</div>
+
+
+<form id=send-message action="">
+
+  <h5 *ngIf="hash.length < 2"> Please Login or Create an account to send messages</h5>
+
+  <input *ngIf="hash.length > 2" type='text' (keydown.enter)="sendMessageForm()" [(ngModel)]='message'
+    placeholder=" Insert your message" name="txtarea">
+</form>

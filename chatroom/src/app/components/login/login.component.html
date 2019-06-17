@@ -1,0 +1,16 @@
+<div id=container>
+
+
+  <form *ngIf="hash.length < 2" action="" (ngSubmit)='create()'>
+    <h2>Login to your account</h2>
+    <input [(ngModel)]='username' type="text" name="username" id="username" placeholder="Username...">
+    <input [(ngModel)]='pass' type="password" name="password" id="password" placeholder="Password...">
+    <input type="submit" value="Login">
+    <div>
+      <p id='login-helper'></p>
+    </div>
+  </form>
+
+  <h3 *ngIf="hash.length > 2">You are logged in!</h3>
+  <button (click)="logOut()" *ngIf="hash.length > 2">Log Out!</button>
+</div>
